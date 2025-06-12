@@ -3,12 +3,12 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') #Returns the app name
 def home():
     app_name = os.getenv('APP_NAME', 'airtasker')
     return Response(app_name, mimetype='text/plain')
 
-@app.route('/healthcheck')
+@app.route('/healthcheck') #Returns a simple healthcheck response
 def healthcheck():
     return Response('OK', mimetype='text/plain')
 
